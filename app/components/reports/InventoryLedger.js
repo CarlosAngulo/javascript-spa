@@ -18,6 +18,13 @@ export default async function InventoryLedger() {
     const prueba2 = new Prueba();
     $container.appendChild(prueba1.render());
     $container.appendChild(prueba2.render());
+    
+    setTimeout(()=>{
+        prueba1.update({
+            texto: 'Carlos',
+            image: 'otro'
+        })
+    }, 3000);
 
     const $title = document.createElement('h2');
     $title.className = 'report-title';
@@ -28,13 +35,6 @@ export default async function InventoryLedger() {
 
     BOP.$container.addEventListener('changeDate', (e) => console.log('BOP: ' + e.detail))
     EOP.$container.addEventListener('changeDate', (e) => console.log('EOP: ' + e.detail))
-
-    setTimeout(()=>{
-        prueba1.update({
-            texto: 'Carlos',
-            image: 'otro'
-        })
-    }, 3000);
 
     $container.appendChild($title);
     $container.appendChild(BOP.$container);
