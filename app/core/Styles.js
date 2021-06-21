@@ -23,10 +23,11 @@ function StyleFactory() {
 }
 
 StyleFactory.prototype.add = function(tagName, cssSegment) {
-    let newCssSegmengt = '\n'+ cssSegment;
-    newCssSegmengt = newCssSegmengt.replace(/:host.+?\{/g, ' {');
-    newCssSegmengt = newCssSegmengt.replace(/\n.+?\{/g, (m) => tagName + m.replace(/\n/, ' '));
-    newCssSegmengt = newCssSegmengt.replace(/\r?\n|\r|\t/g, '');
+    let newCssSegmengt = '\n'+ cssSegment
+    newCssSegmengt = newCssSegmengt
+        .replace(/:host.+?\{/g, ' {')
+        .replace(/\n.+?\{/g, (m) => tagName + m.replace(/\n/, ' '))
+        .replace(/\r?\n|\r|\t/g, '');
     if (!this.objStyle[tagName]) {
         this.objStyle[tagName] = newCssSegmengt;
     }
