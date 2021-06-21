@@ -1,0 +1,9 @@
+p {
+    color: red;
+}
+
+a {
+    border: 1px solid #CCC;
+    display: inline-block;
+    padding: 5px 30px;
+}

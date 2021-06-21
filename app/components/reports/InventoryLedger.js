@@ -2,13 +2,14 @@ import { getAjax } from '../../helpers/ajax.js';
 import api from '../../helpers/api.js';
 import { DatePicker } from '../common/datePicker.js';
 import { Prueba } from '../prueba/Prueba.js';
+import { Segundo } from '../second/Segundo.js';
 
 const title = 'Inventory Ledger';
 
-export default async function InventoryLedger() {
+export default function InventoryLedger() {
 
-    const data = await getAjax(api.ORDER_SEARCH)
-    .then( console.log )
+    // const data = await getAjax(api.ORDER_SEARCH)
+    // .then( console.log )
     
     const $container = document.createElement('div');
 
@@ -25,6 +26,11 @@ export default async function InventoryLedger() {
             image: 'otro'
         })
     }, 3000);
+
+    const segundo = new Segundo({
+        title: 'Segundo componente'
+    });
+    $container.appendChild(segundo.render());
 
     const $title = document.createElement('h2');
     $title.className = 'report-title';

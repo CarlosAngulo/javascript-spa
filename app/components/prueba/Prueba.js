@@ -7,6 +7,7 @@ export function Prueba() {
 }
 
 Prueba.prototype = new Component({
+    tagName: 'prueba',
     templateURL: './app/components/prueba/prueba.html',
-    tagName: 'prueba'
+    stylesUrl: './app/components/prueba/prueba.css'
 });
